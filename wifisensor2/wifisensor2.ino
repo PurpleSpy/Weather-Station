@@ -12,7 +12,7 @@
 String wifiname="YOUR WIFI SSID";
 String wifipass="YOUR WIFI PASSWORD";
 String nameSerial = "LOCATION";
-String actionIP="192.168.1.59";
+String actionIP="0.0.0.0";
 int baudspeed = 9600;
 
 double temp=0;
