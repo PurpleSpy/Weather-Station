@@ -9,11 +9,10 @@
 #include <ESP8266HTTPClient.h>
 
 
-String wifiname="YOUR SSID";
-String wifipass="YOUR WIFI Pass";
-String nameSerial = "sensor name";
-
-String serverIP="0.0.0.0";
+String wifiname="YOUR WIFI SSID";
+String wifipass="YOUR WIFI PASSWORD";
+String nameSerial = "LOCATION";
+String actionIP="192.168.1.59";
 int baudspeed = 9600;
 
 double temp=0;
@@ -45,7 +44,7 @@ void loop() {
   CheckConnection();
     Serial.println("CHecking http"); 
        
-        if(http.begin(client,MakeGetReq(CtoF(bme.readTemperature()),bme.readHumidity(),toInchesMercury(bme.readPressure()),headache,nameSerial))) { 
+        if(http.begin(client,MakeGetReq(CtoF(bme.readTemperature()),bme.readHumidity(),toInchesMercury(bme.readPressure()),headache,nameSerial,actionIP))) { 
           
           if(http.GET()>0) {
             String retval ="";
@@ -90,8 +89,8 @@ void CheckConnection(){
   }
 }
 
-String MakeGetReq(double temp,double humidity,double baro, bool head,String serialnumber){
-  String outstr ="http://" + serverIP+ "/weatherAPI.php?";
+String MakeGetReq(double temp,double humidity,double baro, bool head,String serialnumber,String actionIP){
+  String outstr ="http://"+ actionIP +"/weatherAPI.php?";
   String outstr2="temp=" + String(temp) +"&humid=" + String(humidity) +"&baro=" + String(baro) + "&uid=" +serialnumber +"&head=" + String(head);
 
   outstr2.replace(" ","%20");
