@@ -1,6 +1,48 @@
 <html>
 
 	<head>
+			
+			<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Limelight&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+		<style>
+		
+			
+			body{
+				background:black;
+			}
+			.sensordata{
+				border-radius:10%;
+				border:white solid 1px;
+				font-size:330%;
+				color:lime;
+				float:left;
+				margin: 1.5%;
+				padding:2%;
+				filter:drop-shadow(2 2 white);
+				text-align:center;
+				font-family: "Oswald", system-ui;
+				
+			}
+			
+			.uid{
+				font-family: "Caprasimo", serif;
+			}
+			.tempF{
+				color:orange;
+			}
+			.baro{
+				color:purple;
+			}
+			.humid{
+				color:blue;
+			}
+			.headache{
+				color:red;
+			}
+			
+			
+		</style>
 		<script>
 			currentWeather=Array();	
 			
@@ -16,7 +58,7 @@
 								bcont.children[i].innerHTML= ob.baro + " INinHG";
 							}
 							if (bcont.children[i].className=="humid"){
-								bcont.children[i].innerHTML= parseInt(ob.humid) + " %";
+								bcont.children[i].innerHTML= parseInt(ob.humid) + "%";
 							}
 						}
 						
@@ -47,7 +89,7 @@
 				ob.id=data.uid;
 				cont="<div class=\"uid\">" + data.uid + "</div>";
 				cont+="<div class=\"tempF\">" + parseInt(data.tempF) + " F</div>";
-				cont+="<div class=\"humid\">"+ parseInt(data.humid) + " %</div>";
+				cont+="<div class=\"humid\">"+ parseInt(data.humid) + "%</div>";
 				cont+="<div class=\"baro\">" + data.baro + " INinHG</div>";
 				cont+="<div class=\"headache\">"+ data.headache +"</div>";
 				
