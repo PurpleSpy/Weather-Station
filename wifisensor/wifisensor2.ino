@@ -12,7 +12,7 @@
 String wifiname="YOUR SSID";
 String wifipass="WIFI PASSWORD";
 String nameSerial = "LivingRoom";
-String actionIP="192.168.1.59";
+String actionIP="ACTION Server";
 int baudspeed = 9600;
 
 double temp=0;
