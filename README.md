@@ -16,7 +16,7 @@ in the ino file. The ino file is a arduino scetch for the esp8266 and you will a
 The server you choose will need to be running PHP https://www.php.net/ the weatherAPI does the lifting for saving and pulling information to your database. The weateherGUI is a dashboard to view all sensors you have running. Each sensor must have its own name without spaces. If you give
 two sensors the same name then they will fight for control and look like one entry in the database. Those pins differ then the wiring diagram and they
 
-refer to the IDE pinout for counting the pins.
+Refer to the IDE pinout for counting the pins.
 
 #define BME_SCK 14
 #define BME_MISO 13
