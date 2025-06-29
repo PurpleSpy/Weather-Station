@@ -60,6 +60,11 @@
 							if (bcont.children[i].className=="humid"){
 								bcont.children[i].innerHTML= parseInt(ob.humid) + "%";
 							}
+							
+							if (bcont.children[i].className=="headache"){
+								bcont.children[i].innerHTML= ob.headache ;
+							}
+							
 						}
 						
 					}

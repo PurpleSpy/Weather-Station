@@ -1,7 +1,7 @@
 <?php
-		$un = "your sql userbame";
-		$up = "spysmemory";
-		$u="your sql password";
+		$un = "mysql username";
+		$up = "mysql password";
+		$u="weatherinfo";
 		$webserv=@connectTODataBase($u,$un,$up);
 		$startTime= time();
 		
