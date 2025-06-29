@@ -18,10 +18,15 @@ two sensors the same name then they will fight for control and look like one ent
 
 Refer to the IDE pinout for counting the pins.
 
-#define BME_SCK 14
-#define BME_MISO 13
-#define BME_MOSI 12
-#define BME_CS 3
+BME_SCK 14
+BME_MISO 13
+BME_MOSI 12
+BME_CS 3
+
+headache pin 4
+led pin 5
+
+Headache pin is for a NO switch that triggers an interrupt to notate some of the weather data. Pin 5 is used to light an led when headache pin is triggered.
 
 Inside the weatherAPI you will need to add your own mysql user,mysql password and php server IP address.
 
