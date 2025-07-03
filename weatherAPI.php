@@ -1,8 +1,9 @@
 <?php
-		$un = "mysql username";
-		$up = "mysql password";
+		$un = "sql username";
+		$up = "sql pass";
 		$u="weatherinfo";
 		$webserv=@connectTODataBase($u,$un,$up);
+		$timewait= 15;
 		$startTime= time();
 		
 	if(isset($_GET["uid"])){
@@ -11,21 +12,7 @@
 			echo 0;
 			exit;
 		}
-		
-		$statement="select count(*) from weather";
-		$res= $webserv->prepare($statement);
-		$res->execute();
-		$colrow=$res->fetchAll(PDO::FETCH_COLUMN);
-		
-		
-		
-		if($colrow[0] >10000){
-			print $colrow[0] . "\n";
-		}
-		else{
-			print $colrow[0] . "\n";
-		}
-		
+				
 		if(!isset($_GET["temp"])){
 			$_GET["temp"]=-255;
 		}
@@ -48,9 +35,9 @@
 				$prep->execute();
 				
 			
-			$timetotal = $startTime-time() ;
+			$timetotal = time()-$startTime ;
 			
-			if($timetotal >= 25){
+			if($timetotal >= $timewait){
 				$statement="SELECT * FROM WEATHER WHERE headache=1;";
 				$prep=$webserv->prepare($statement);
 				$prep->execute();
@@ -58,7 +45,7 @@
 				
 				$ncount=0;
 				
-				if (count($colrows)>0){
+				if (count($columnrows)>0){
 					
 					while (file_exists("./sql/sdldump" .$ncount.".sql")){
 						$ncount+=1;
